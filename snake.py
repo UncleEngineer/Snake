@@ -25,7 +25,7 @@ class Snake(Canvas):
 
 		self.load_assets()
 		self.create_objects()
-		print(self.find_withtag('snake'))
+		#print(self.find_withtag('snake'))
 		self.perform_actions()
 		#self.after(GAME_SPEED, self.perform_actions)
 		
@@ -64,12 +64,12 @@ class Snake(Canvas):
 			new_head_position = (head_x_position, head_y_position - MOVE_INCREMENT)
 
 		#new_head_position = (head_x_position + MOVE_INCREMENT, head_y_position)
-		print('NEW HEAD:',new_head_position)
-		print('LSP',self.snake_positions[:-1])
+		#print('NEW HEAD:',new_head_position)
+		#print('LSP',self.snake_positions[:-1])
 		self.snake_positions = [new_head_position] + self.snake_positions[:-1]
-		print('PS:',self.snake_positions)
+		#print('PS:',self.snake_positions)
 		findsnake = self.find_withtag('snake')
-		print(findsnake)
+		#print(findsnake)
 		for segment, position in zip(findsnake,self.snake_positions):
 			self.coords(segment, position)
 
@@ -80,7 +80,7 @@ class Snake(Canvas):
 			self.starting = False
 			self.delete('all')
 			self.create_text(300,300,justify=CENTER,text=f'GAME OVER\n\nScore: {self.score}\n\nNew Game <F1>',tag='score',fill='#fff',font=(None,30))
-			print('COLLISION')
+			#print('COLLISION')
 		elif self.check_collisions() and self.starting == False:
 			self.delete('all')
 			self.snake_positions = self.reset
@@ -89,7 +89,7 @@ class Snake(Canvas):
 			self.starting = True
 			self.direction = 'Right'
 			self.score = 0
-			print('New')
+			#print('New')
 			self.loop = self.after(GAME_SPEED, self.perform_actions)
 
 		else:
@@ -109,7 +109,7 @@ class Snake(Canvas):
 
 	def on_key_press(self,e):
 		new_direction = e.keysym
-		print(new_direction)
+		#print(new_direction)
 		# self.direction = new_direction
 
 		all_direction = ('Up','Down','Left','Right')
