@@ -1,6 +1,7 @@
 # Snake
 Snake Game
 
+ดูคลิปสอนฉบับลุง: https://youtu.be/erczw3GqCDA
 
 ลุงสอนเขียน “เกมงู Nokia 3310”
 ด้วย Python
